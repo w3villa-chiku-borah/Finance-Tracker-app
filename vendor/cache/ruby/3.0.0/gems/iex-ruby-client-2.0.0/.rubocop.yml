@@ -1,0 +1,22 @@
+AllCops:
+  Exclude:
+    - vendor/**/*
+  TargetRubyVersion: 2.4
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Naming/MethodName:
+  Enabled: false
+
+Naming/FileName:
+  Exclude:
+    - "lib/iex-ruby-client.rb"
+
+Style/Documentation:
+  Enabled: false
+
+Metrics:
+  Enabled: false
+
+inherit_from: .rubocop_todo.yml
