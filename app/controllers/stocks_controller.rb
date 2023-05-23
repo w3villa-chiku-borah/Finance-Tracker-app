@@ -4,7 +4,7 @@ class StocksController < ApplicationController
     
       @stock = Stock.new_lookup(params[:stock])
       @track_stock = current_user.stocks
-
+debugger
       # render json: stock
       if params[:stock].present?
          if @stock

@@ -14,8 +14,8 @@ class Stock < ApplicationRecord
             endpoint: 'https://cloud.iexapis.com/v1'
           )
 
-        # client.price(name)
-
+            # client.price(name)
+    
         begin
             new(ticker: name, name: client.company(name).company_name, last_price:  client.price(name))
         rescue => exception
