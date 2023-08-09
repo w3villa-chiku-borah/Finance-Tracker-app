@@ -7,6 +7,8 @@ class Stock < ApplicationRecord
     validates :ticker, :name , presence: true
 
     def self.new_lookup(name)
+
+        begin
         client = IEX::Api::Client.new(
             publishable_token: Rails.application.credentials.iex_client[:sandbox_api_key],
              secret_token: Rails.application.credentials.iex_client[:sandbox_api_key],
@@ -16,7 +18,6 @@ class Stock < ApplicationRecord
 
             # client.price(name)
     
-        begin
             new(ticker: name, name: client.company(name).company_name, last_price:  client.price(name))
         rescue => exception
             nil 
